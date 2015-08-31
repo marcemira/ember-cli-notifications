@@ -34,19 +34,19 @@ $notification-icon-color:                  rgba(#fff,.74) !default;
 // Success notification
 $notification-success-bg:                  #64ce83 !default;
 $notification-success-alt:                 darken(desaturate($notification-success-bg, 5), 15) !default;
-$notification-success-color:               #FFF;
+$notification-success-color:               #FFF !default;
 
 // Neutral notification
 $notification-info-bg:                     #3ea2ff !default;
 $notification-info-alt:                    darken(desaturate($notification-info-bg, 5), 15) !default;
-$notification-info-color:                  #FFF;
+$notification-info-color:                  #FFF !default;
 
 // Warning notification
 $notification-warning-bg:                  #ff7f48 !default;
 $notification-warning-alt:                 darken(desaturate($notification-warning-bg, 5), 15) !default;
-$notification-warning-color:               #FFF;
+$notification-warning-color:               #FFF !default;
 
 // Error notification
 $notification-error-bg:                    #e74c3c !default;
 $notification-error-alt:                   darken(desaturate($notification-error-bg, 5), 15) !default;
-$notification-error-color:                 #FFF;
+$notification-error-color:                 #FFF !default;
