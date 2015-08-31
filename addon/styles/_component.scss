@@ -6,7 +6,7 @@
 // Comtainer that houses the notification messages
 .#{$notification-css-prefix}__container {
   position: fixed;
-  top: 10px;
+  top: $notification-top;
   right: 0;
   left: 0;
   z-index: $notification-zindex;
@@ -103,14 +103,14 @@
 // -------------------------
 
 .#{$notification-css-prefix}--info {
-  @include notification-theme($notification-info-bg, $notification-info-alt);
+  @include notification-theme($notification-info-bg, $notification-info-alt, $notification-info-color);
 }
 .#{$notification-css-prefix}--success {
-  @include notification-theme($notification-success-bg, $notification-success-alt);
+  @include notification-theme($notification-success-bg, $notification-success-alt, $notification-success-color);
 }
 .#{$notification-css-prefix}--error {
-  @include notification-theme($notification-error-bg, $notification-error-alt);
+  @include notification-theme($notification-error-bg, $notification-error-alt, $notification-error-color);
 }
 .#{$notification-css-prefix}--warning {
-  @include notification-theme($notification-warning-bg, $notification-warning-alt);
+  @include notification-theme($notification-warning-bg, $notification-warning-alt, $notification-warning-color);
 }
