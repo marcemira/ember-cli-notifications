@@ -3,8 +3,9 @@
 // --------------------------------------------------
 
 
-@mixin notification-theme($background, $alt) {
+@mixin notification-theme($background, $alt, $color) {
   background-color: $background;
+  color: $color;
 
   .#{$notification-css-prefix}__icon { background-color: $alt; }
 
