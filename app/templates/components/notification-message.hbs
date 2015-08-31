@@ -1,9 +1,7 @@
 <div class="c-notification__icon">
-  <span>
-    {{#if hasIcon}}
-      <i class="{{notificationIcon}}"></i>
-    {{/if}}
-  </span>
+  {{#if hasIcon}}
+    <i class="{{notificationIcon}}"></i>
+  {{/if}}
 </div>
 <div class="c-notification__content">
   {{{notification.message}}}
