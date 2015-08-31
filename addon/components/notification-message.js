@@ -13,19 +13,20 @@ export default Ember.Component.extend({
   // Set the correct close icon depending on chosen icon font
   closeIcon: Ember.computed('icons', function() {
     if (this.get('icons') === 'bootstrap') return 'glyphicon glyphicon-remove';
-
     return 'fa fa-times';
   }),
 
+  hasIcon: Ember.computed('icons', 'notification.iconClass', function() {
+    return (this.get('icons') || this.get('notification.iconClass'));
+  }),
+
   // Set icon depending on notification type
-  notificationIcon: Ember.computed('notification.type', 'icons', 'icon', function() {
+  notificationIcon: Ember.computed('notification.type', 'icons', 'notification.iconClass', function() {
     var icons = this.get('icons');
-    var icon = this.get('notification.iconClass');
+    var iconClass = this.get('notification.iconClass');
 
-    if(icons || icon){ this.set('hasIcon', true); }
-
-    if(icon){
-      return this.get('icon');
+    if(iconClass){
+      return iconClass;
     } else {
 
       if (icons === 'font-awesome') {
