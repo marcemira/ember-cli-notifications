@@ -9,31 +9,39 @@ export default Ember.Component.extend({
   ],
 
   // Set icon depending on notification type
-  notificationIcon: Ember.computed('notification.type', 'icons', function() {
+  notificationIcon: Ember.computed('notification.type', 'icons', 'icon', function() {
     var icons = this.get('icons');
+    var icon = this.get('notification.iconClass');
 
-    if (icons === 'font-awesome') {
-      switch(this.get('notification.type')){
-        case "info":
-          return 'fa fa-info-circle';
-        case "success":
-          return 'fa fa-check';
-        case "warning":
-          return 'fa fa-warning';
-        case "error":
-          return 'fa fa-exclamation-circle';
+    if(icons || icon){ this.set('hasIcon', true); }
+
+    if(icon){
+      return this.get('icon');
+    } else {
+
+      if (icons === 'font-awesome') {
+        switch(this.get('notification.type')){
+          case "info":
+            return 'fa fa-info-circle';
+          case "success":
+            return 'fa fa-check';
+          case "warning":
+            return 'fa fa-warning';
+          case "error":
+            return 'fa fa-exclamation-circle';
+        }
       }
-    }
 
-    if (icons === 'bootstrap') {
-      switch(this.get('notification.type')){
-        case "info":
-          return 'glyphicon glyphicon-info-sign';
-        case "success":
-          return 'glyphicon glyphicon-ok-sign';
-        case "warning":
-        case "error":
-          return 'glyphicon glyphicon-exclamation-sign';
+      if (icons === 'bootstrap') {
+        switch(this.get('notification.type')){
+          case "info":
+            return 'glyphicon glyphicon-info-sign';
+          case "success":
+            return 'glyphicon glyphicon-ok-sign';
+          case "warning":
+          case "error":
+            return 'glyphicon glyphicon-exclamation-sign';
+        }
       }
     }
   }),
