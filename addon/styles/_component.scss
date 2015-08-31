@@ -47,19 +47,17 @@
 // -------------------------
 
 .#{$notification-css-prefix}__icon {
+  display: flex;
   position: absolute;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   left: 0;
   top: 0;
   height: 100%;
   font-size: $notification-icon-font-size;
   width: $notification-icon-width;
   color: $notification-icon-color;
-  text-align: center;
-
-  span {
-    position: relative;
-    top: $notification-icon-position;
-  }
 }
 
 .#{$notification-css-prefix}__content {
