@@ -15,6 +15,7 @@ export default Ember.ArrayProxy.extend({
         const notification = Ember.Object.create({
             message: options.message,
             type: options.type || 'info', // info, success, warning, error
+            iconClass: options.iconClass || null,
             autoClear: options.autoClear || this.get('defaultAutoClear'),
             clearDuration: options.clearDuration || this.get('defaultClearDuration'),
             onClick: options.onClick
